@@ -58,7 +58,14 @@ export class ChatwootAPI {
             if (chatwootContact == null) {
                 const avatarUrl = await (await messageChat.getContact()).getProfilePicUrl();
                 const result = <{ contact: object }>(
-                    await this.makeChatwootContact(whatsappWebChatwootInboxId, contactName, contactNumber, contactIdentifier, avatarUrl));
+                    await this.makeChatwootContact(
+                        whatsappWebChatwootInboxId,
+                        contactName,
+                        contactNumber,
+                        contactIdentifier,
+                        avatarUrl
+                    )
+                );
 
                 chatwootContact = result.contact;
             } else {
